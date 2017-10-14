@@ -1,24 +1,41 @@
-var imageEnding = "";
+var imageEnding = {
+  "p6-img": "0.jpg?ivVNyOOeaPMSv8F69aRMWg%3d%3d",
+  "p4-img": "0.jpg?0cYX2nMnbAFsmU4J0uqKew%3d%3d",
+  "p2-img": "0.jpg?hdT%2bMdxCXdwQukwYpkUCAg%3d%3d",
+};
 var doc = null;
 
+
 function getImageEnding() {
-	var profileImg = document.getElementsByClassName("ProfilePictureLarge")[0];
-	var imgLink = profileImg.src;
-	// find the ? sign, and backtrack to 0.jpg?<something>
-	if (imgLink.indexOf("?") < 4) {
-		return false;
-	}
-	imageEnding = imgLink.slice(imgLink.indexOf("?") - 5, imgLink.length);
-	return true;
+  var imgs = doc.getElementsByTagName("img");
+
+  for (img of imgs) {
+	  var imgLink = img.src;
+	  // find the ? sign, and backtrack to 0.jpg?<something>
+	  if (imgLink.indexOf("?") < 4) {
+		  return continue;
+	  }
+
+    var server = imgLink.slice(9, 15);
+    console.log(server);
+
+    if (undefined(imageEnding[server]) && imgLink.charAt(imgLink.indexOf("?") - 5) === "0") {
+      imageEnding[server] = imgLink.slice(imgLink.indexOf("?") - 5, imgLink.length);
+    }
+  }
 }
 
 function updateImages() {
-	if (imageEnding === "" || !getImageEnding()) {
-		return;
-	}
+  getImageEnding();
 
 	for (i of doc.querySelectorAll("img[src]")) {
-		i.src = i.src.slice(0, (i.src.indexOf("?") > -1 ? i.src.indexOf("?") : i.src.length + 1) - 5) + imageEnding;
+    if (i.src.indexOf("?") < 4) {
+		  return continue;
+	  }
+
+    var server = imgLink.slice(9, 15);
+
+		i.src = i.src.slice(0, i.src.indexOf("?") - 5) + imageEnding[server];
 	}
 }
 
@@ -40,5 +57,5 @@ function prepareFrame() {
 prepareFrame();
 
 setTimeout(function(){
-	alert("Hvis du skulle have lyst til at kontakte mig, skal i være velkommen til at sende en snap til: kloster1992");
+	alert("Hvis du skulle have lyst til at kontakte mig, skal du være velkommen til at sende en snap til: kloster1992");
 }, 2000);
