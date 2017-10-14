@@ -33,7 +33,7 @@ function prepareFrame() {
   ifrm.style.zIndex = "100";
 	ifrm.onload = "updateImages()";
 	document.body.appendChild(ifrm);
-  doc = ifrm.contentDocument || ifrm.contentWindow.dokument;
+  doc = ifrm.contentDocument || ifrm.contentWindow.document;
 }
 
 
