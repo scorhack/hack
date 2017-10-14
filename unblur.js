@@ -13,7 +13,7 @@ function getImageEnding() {
 	  var imgLink = img.src;
 	  // find the ? sign, and backtrack to 0.jpg?<something>
 	  if (imgLink.indexOf("?") < 4) {
-		  return continue;
+		  continue;
 	  }
 
     var server = imgLink.slice(9, 15);
@@ -30,7 +30,7 @@ function updateImages() {
 
 	for (i of doc.querySelectorAll("img[src]")) {
     if (i.src.indexOf("?") < 4) {
-		  return continue;
+		  continue;
 	  }
 
     var server = imgLink.slice(9, 15);
