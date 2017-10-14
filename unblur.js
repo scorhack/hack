@@ -26,7 +26,7 @@ function prepareFrame() {
 	ifrm.setAttribute("src", window.location.href); //"https://www.scor.dk/Profiler/Profil/2392623/CBen");
 	ifrm.style.width = "100%";
 	ifrm.style.height = "100%";
-	ifrm.style.position = "absolute";
+	ifrm.style.position = "fixed";
   ifrm.style.zIndex = "100";
 	ifrm.onload = "updateImages()";
 	document.body.appendChild(ifrm);
