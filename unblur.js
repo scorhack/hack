@@ -54,7 +54,7 @@ function prepareFrame() {
 }
 
 
-prepareFrame();
+//prepareFrame();
 
 setTimeout(function(){
 	alert("Hvis du skulle have lyst til at kontakte mig, skal du være velkommen til at sende en snap til: kloster1992");
