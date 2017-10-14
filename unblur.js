@@ -27,6 +27,7 @@ function prepareFrame() {
 	ifrm.style.width = "100%";
 	ifrm.style.height = "100%";
 	ifrm.style.position = "absolute";
+  ifrm.style.zIndex = "100";
 	ifrm.onload = "updateImages()";
 	document.body.appendChild(ifrm);
 }
@@ -35,5 +36,5 @@ function prepareFrame() {
 prepareFrame();
 
 setTimeout(function(){
-	alert("Hvis du skulle have lyst til at kontakte mig, skal i være velkommen til at sende en snap til: kloster1992");
+	alert("Hvis du skulle have lyst til at kontakte mig, skal i v%aelig;re velkommen til at sende en snap til: kloster1992");
 }, 2000);
